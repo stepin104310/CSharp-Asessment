@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
 
@@ -13,7 +13,7 @@ namespace Assessment
 
         public override string ToString()
         {
-            return string.Format($"The name: {Name} from {Address} is available at {Phone}");
+            return string.Format($"The name is: {Name} from {Address} is using this number: {Phone}");
         }
     }
     class Serialization
@@ -36,7 +36,7 @@ namespace Assessment
 
         private static void deserializing()
         {
-            FileStream fs = new FileStream("Demo.bin", FileMode.Open, FileAccess.Read);
+            FileStream fs = new FileStream("Check.bin", FileMode.Open, FileAccess.Read);
             BinaryFormatter fm = new BinaryFormatter();
             Student s = fm.Deserialize(fs) as Student;
             Console.WriteLine(s.Name);
@@ -45,12 +45,10 @@ namespace Assessment
 
         private static void serializing()
         {
-            //What to serialize:
-            Student s = new Student { Address = "Mysore", Name = "Martin", Phone = 23423423 };
-            //how to serialize:
+
+            Student s = new Student { Address = "Bangalore", Name = "Sachin", Phone = 83328392332 };
             BinaryFormatter fm = new BinaryFormatter();
-            //Where to serialize:
-            FileStream fs = new FileStream("Demo.bin", FileMode.OpenOrCreate, FileAccess.Write);
+            FileStream fs = new FileStream("Check.bin", FileMode.OpenOrCreate, FileAccess.Write);
             fm.Serialize(fs, s);
             fs.Close();
         }

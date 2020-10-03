@@ -26,9 +26,9 @@ namespace Assessment
 
         private static void binaryExample()
         {
-            Console.WriteLine("What do U want to do today: Read or Write");
+            Console.WriteLine("Read or Write");
             string choice = Console.ReadLine();
-            if (choice.ToLower() == "read")
+            if (choice.ToLower() == "Read")
                 deserializing();
             else
                 serializing();

@@ -28,9 +28,9 @@ namespace Assessment
     class CustomerManager : ICustomerManager
     {
         HashSet<Customer> customer = new HashSet<Customer>();
-        public bool AddCustomer(Customer bk)
+        public bool AddCustomer(Customer cust)
         {
-            return customer.Add(bk);
+            return customer.Add(cust);
         }
 
         public bool ViewAllCustomer()

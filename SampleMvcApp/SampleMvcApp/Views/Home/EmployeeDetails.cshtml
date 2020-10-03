@@ -1,0 +1,42 @@
+﻿@model SampleMvcApp.Models.Employee[]
+@{
+    ViewBag.Title = "EmployeeDetails";
+}
+<!DOCTYPE html>
+<html>
+<body>
+    <nav>
+        <div>
+            <button>@Html.ActionLink("New Registration", "NewEmployee")</button>
+        </div>
+    </nav>
+<h2>EmployeeDetails</h2>
+<div>
+    <table border="1" width="100%">
+        <tr>
+            <th>Employee Name</th>
+            <th>Employee Address</th>
+            <th>Employee Id</th>
+            <th>Employee Salary</th>
+            <td>Options</td>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.EmployeeName</td>
+                <td>@item.EmployeeAddress</td>
+                <td>@item.EmployeeId</td>
+                <td>@item.EmployeeSalary</td>
+                <td>
+                    @Html.ActionLink("Edit", "Find", new { id = item.EmployeeId })
+
+                    @Html.ActionLink("X", "Delete", new { id = item.EmployeeId })
+                </td>
+            </tr>
+        }
+    </table>
+</div>
+</body>
+</html>
+

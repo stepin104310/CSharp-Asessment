@@ -1,0 +1,39 @@
+﻿@model SampleMvcApp.Models.Employee
+
+@{
+    ViewBag.Title = "Find";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width"/>
+    <title>Find</title>
+</head>
+<body width ="100%">
+    <h1 style="color:forestgreen">Update the Details of the Employee</h1>
+      <div>
+          @using (Html.BeginForm())
+          {
+              <p>
+                  Enter the EmpId : @Html.EditorFor((m) => m.EmployeeId)
+              </p>
+
+              <p>
+                  Enter the Employee Name : @Html.EditorFor((m) => m.EmployeeName)
+              </p>
+
+              <p>
+                  Enter the Employee Address : @Html.EditorFor((m) => m.EmployeeAddress)
+              </p>
+
+              <p>
+                  Enter the Employee Salary : @Html.EditorFor((m) => m.EmployeeSalary)
+              </p>
+
+              <input type="submit" value="Save Changes" />
+          }
+      </div>
+</body>
+</html>
+

@@ -1,0 +1,44 @@
+﻿@model SampleMvcApp.Models.Employee
+
+@{
+    ViewBag.Title = "ShowHtml";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width"/>
+    <title>ShowHtml </title>
+
+<style>
+    body
+    {
+        background-color:aqua;
+        color:black;
+    }
+
+    h1
+    {
+        text-decoration:underline;
+        text-emphasis-style:double-circle;
+        color:black;
+        font-size: 40pt;
+        margin:auto;
+    }
+    p
+    {
+        font-size: 20pt;
+        margin:auto;
+        color:black;
+    }
+</style>
+</head> 
+<body>
+<h1>ShowHtml</h1>
+    <p>The Name:@Model.EmployeeName</p>
+    <p>The Address:@Model.EmployeeAddress</p>
+    <p>The Id:@Model.EmployeeId</p>
+    <p>The Salary:@Model.EmployeeSalary</p>
+</body>
+</html>
+
